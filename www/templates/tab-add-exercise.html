@@ -1,0 +1,22 @@
+<ion-view view-title="Add Exercise">
+  <ion-content>
+    <ion-list>
+        <ion-item class="item-divider">Exercise Type</ion-item>
+        <ion-item>
+            <ion-radio name="exerciseType" ng-model="exercise.type" ng-value="'cardio'" ng-click="resetObject('cardio')">Cardio</ion-radio>
+            <ion-radio name="exerciseType" ng-model="exercise.type" ng-value="'weights'" ng-click="resetObject('weights')">Weights</ion-radio>
+        </ion-item>
+        <ion-item>
+            <label class="item item-input">
+                <input type="text" ng-model="exercise.name" placeholder="Exercise or machine name">
+              </label>
+              <label class="item item-input">
+                <input type="text" ng-model="exercise.muscle" placeholder="Target muscle (Optional)">
+              </label>
+        </ion-item>
+        <div class="padding">
+        <button class="button button-full button-balanced" ng-click="saveExercise()">Add Exercise</button>
+        </div>
+    </ion-list>
+  </ion-content>
+</ion-view>

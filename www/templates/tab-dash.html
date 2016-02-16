@@ -1,0 +1,27 @@
+<ion-view view-title="Routines">
+ <div class="list card has-header">
+  <ion-toggle  ng-model="showFinishedExercises" ng-change="resetScroll()">
+       Show finished exercises
+    </ion-toggle>
+    <ion-toggle  ng-model="reorder">
+       Reorder exercises
+    </ion-toggle>
+    </div>
+    
+    <ion-content class="routine-wrapper"  delegate-handle="mainScroll">
+        <ion-list show-reorder="reorder">
+          <ion-item ng-class="itemStatus(item.complete, showFinishedExercises)" class="item-remove-animate item-icon-right" ng-repeat="item in exerciseList" type="item-text-wrap" href="#/tab/chats/{{item.name}}" can-swipe="true"><!-- add class  item-avatar -->
+            <!--<img ng-src="{{chat.face}}">-->
+            
+            <ion-reorder-button class="ion-ios-drag" on-reorder="moveItem(item, $fromIndex, $toIndex)" ng-click="removeOriginal( $event.currentTarget)"></ion-reorder-button>
+            <h2>{{exerciseList.indexOf(item)}} {{item.name}}</h2>
+            <p>{{item.type}}</p>
+            <i class="icon ion-chevron-right icon-accessory"></i>
+            <ion-option-button class="button-assertive" ng-click="remove(chat)">Delete</ion-option-button>
+            <ion-option-button class="button-balanced" ng-click="remove(chat)">DONE</ion-option-button>
+          </ion-item>
+        </ion-list>
+    
+        </ion-list>
+  </ion-content>
+</ion-view>

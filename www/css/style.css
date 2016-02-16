@@ -1,0 +1,19 @@
+ion-content.routine-wrapper {
+    margin-top: 140px;
+}
+
+.hide-completed{
+    display: none !important;
+}
+.completed{
+    border-color: #FFF;
+    background-color: #e42112;
+}
+
+.completed h2, .completed p, .completed i {
+    color:#FFF !important;
+}
+
+.completed a{
+    background-color: transparent !important;
+}
