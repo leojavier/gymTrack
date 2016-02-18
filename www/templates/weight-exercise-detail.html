@@ -1,0 +1,15 @@
+<ion-view view-title="{{exerciseId}}">
+    <ion-content>
+        <ion-list>
+          <ion-item class="item-remove-animate item-icon-right" ng-repeat="item in weightExerciseList | filter: {bodyArea: exerciseId}" type="item-text-wrap" href="javascript:void(0)" can-swipe="true"><!-- add class  item-avatar -->
+            <!--<img ng-src="{{chat.face}}">-->
+            
+            <h2>{{exerciseList.indexOf(item)}} {{item.name}}</h2>
+            <p>{{item.muscle}}</p>
+            <i class="icon ion-chevron-right icon-accessory"></i>
+            <ion-option-button class="button-assertive" ng-click="remove(item)"><i class="icon ion-ios-trash-outline"></i></ion-option-button>
+            <ion-option-button class="button-balanced" ng-click="addToRoutine(item)"><i class="icon ion-ios-shuffle-strong"></i></ion-option-button>
+          </ion-item>
+        </ion-list>
+  </ion-content>
+</ion-view>

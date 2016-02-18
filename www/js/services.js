@@ -5,6 +5,11 @@ angular.module('starter.services', [])
   return $firebaseArray(itemsRef);
 })
 
+.factory('bodyArea', function(){
+    var bodyArea = ['Arms', 'Chest', 'Abs', 'Legs', 'Back', 'Shoulders'];
+    return bodyArea;
+})
+
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array
 

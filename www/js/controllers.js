@@ -108,18 +108,22 @@ angular.module('starter.controllers', [])
     }
 })
 
-.controller('ChatsCtrl', function($scope, exercises) {
-  $scope.weightExerciseList = exercises;
+.controller('cardioExerciseController', function($scope, exercises) {
+  $scope.cardioExerciseList = exercises;
+    
+    $scope.remove = function(item) {
+        $scope.cardioExerciseList.$remove(item);
+    }
 })
 
-.controller('addExerciseController', function($scope, exercises){
+.controller('addExerciseController', function($scope, exercises, bodyArea){
     $scope.exercise ={};
     $scope.items = exercises;
+    $scope.bodyArea = bodyArea;
     
     $scope.resetObject = function(item){ 
         $scope.exercise = {};
         $scope.exercise.type = item;
-        console.log($scope.exercise)
     }
     
     $scope.saveExercise = function(){
@@ -128,10 +132,20 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
+.controller('weightExerciseController', function($scope, bodyArea) {
+  //$scope.weightExerciseList = exercises;
+  $scope.bodyArea = bodyArea;
+    //$scope.remove = function(item) {
+        //$scope.weightExerciseList.$remove(item);
+    //}
 })
 
-.controller('AccountCtrl', function($scope, exercises) {
-  $scope.weightExerciseList = exercises;
+.controller('weightExerciseDetailController', function($scope, $stateParams, exercises) {
+    $scope.exerciseId = $stateParams.exerciseId;
+    $scope.weightExerciseList = exercises;
+    $scope.remove = function(item) {
+        $scope.weightExerciseList.$remove(item);
+    }
 });
+
+
